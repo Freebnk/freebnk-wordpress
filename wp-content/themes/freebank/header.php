@@ -24,7 +24,7 @@ $frontpage_id = get_option( 'page_on_front' );
 <?php wp_body_open(); ?>
 <div class="body-wrapper ">
 
-      <div id='animation__wrapper' class="animation__wrapper">
+      <div id='animation__wrapper' class="animation__wrapper close">
          <div class="animation__list">
             <div class="animation__item">
                <video autoplay muted>
@@ -33,7 +33,6 @@ $frontpage_id = get_option( 'page_on_front' );
                <img src="<?php echo get_field('screen__image',$frontpage_id)?>"  alt="">
             </div>
          </div>
-         
       </div>
 
       <!--HEADER-->

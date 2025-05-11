@@ -152,6 +152,41 @@ function freebank_scripts() {
 	wp_enqueue_script( 'freebank-js-owl', 			$stylesheet_directory_uri . 'assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'freebank-js-main', 			$stylesheet_directory_uri . 'assets/js/main.js', array(), _S_VERSION, true );
 
+	// Animasyonu DOM yüklendikten hemen sonra kapatmak için inline script
+	wp_add_inline_script('freebank-js-jq', '
+		jQuery(document).ready(function() {
+			jQuery(".animation__wrapper").addClass("close");
+			jQuery("#animation__wrapper").addClass("close");
+			jQuery(".animation__wrapper").css("display", "none");
+			jQuery("#animation__wrapper").css("display", "none");
+			jQuery("body").removeClass("noscroll");
+		});
+	');
+
+	// Animasyonu gizleyen CSS stilleri inline olarak ekle
+	wp_add_inline_style('freebank-main', '
+		.animation__wrapper,
+		#animation__wrapper,
+		div[id="animation__wrapper"],
+		div[class="animation__wrapper"],
+		div[class*="animation__wrapper"] {
+			display: none !important;
+			visibility: hidden !important;
+			opacity: 0 !important;
+			z-index: -1 !important;
+			height: 0 !important;
+			width: 0 !important;
+			position: absolute !important;
+			overflow: hidden !important;
+			pointer-events: none !important;
+		}
+		.animation__wrapper.close {
+			display: none !important;
+		}
+		body.noscroll {
+			overflow: auto !important;
+		}
+	');
 }
 add_action( 'wp_enqueue_scripts', 'freebank_scripts' );
 

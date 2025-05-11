@@ -1,42 +1,271 @@
-/* BetterDocs sayfalarında header'ı görünür yap */
+/* Animasyon kapalı olacak */
+body.post-type-archive-docs .animation__wrapper,
+body.tax-doc_category .animation__wrapper,
+body.single-docs .animation__wrapper {
+    display: none !important;
+}
+
+/* BetterDocs sayfalarında arka plan rengini ve margin ayarla */
+body.post-type-archive-docs,
+body.tax-doc_category,
+body.single-docs {
+    background-color: #091D26;
+}
+
+/* WordPress admin bar için kaymayı düzelt */
+.admin-bar .header {
+    top: 32px !important;
+}
+
+/* BetterDocs için header stilleri */
 body.post-type-archive-docs .header,
 body.tax-doc_category .header,
 body.single-docs .header {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    background-color: transparent;
-    position: relative;
+    background-color: #091D26;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 999;
 }
 
-/* BetterDocs sayfalarında header stillerini düzenle */
-body.post-type-archive-docs .header ._inner,
-body.tax-doc_category .header ._inner,
-body.single-docs .header ._inner {
-    background-color: #091D26;
-    border-radius: 10px;
-    padding: 10px 20px;
+/* Header logo ve menüsü */
+body.post-type-archive-docs .header-logo._static,
+body.tax-doc_category .header-logo._static,
+body.single-docs .header-logo._static {
+    display: none;
 }
 
-/* Header linklerini görünür yap */
+body.post-type-archive-docs .header-logo._hover,
+body.tax-doc_category .header-logo._hover,
+body.single-docs .header-logo._hover {
+    display: block;
+}
+
+/* Hamburger menü */
+body.post-type-archive-docs .menu-burger__header,
+body.tax-doc_category .menu-burger__header,
+body.single-docs .menu-burger__header {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: block;
+    background: #091D26;
+    border-radius: 50%;
+    z-index: 4;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Açılan Menü stilleri - Anasayfa ile aynı stilin kopyası */
+body.post-type-archive-docs .header__menu--wrapper,
+body.tax-doc_category .header__menu--wrapper,
+body.single-docs .header__menu--wrapper {
+    visibility: hidden;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    -webkit-transform: translateX(250%);
+    -ms-transform: translateX(250%);
+    transform: translateX(250%);
+    padding: 100px 5% 50px;
+    width: 40%;
+    height: 100vh;
+    background: #091D26;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0;
+}
+
+body.post-type-archive-docs .header__menu--wrapper._js--open-menu,
+body.tax-doc_category .header__menu--wrapper._js--open-menu,
+body.single-docs .header__menu--wrapper._js--open-menu {
+    visibility: visible;
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
 body.post-type-archive-docs .header__menu-link,
 body.tax-doc_category .header__menu-link,
 body.single-docs .header__menu-link {
     color: #FFFFFF !important;
-    font-family: "TT Commons Pro", sans-serif;
+    font-family: 'TT Bluescreens Trial Variable';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 70px;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
 }
 
-/* Header logosunu görünür yap */
-body.post-type-archive-docs .header-logo,
-body.tax-doc_category .header-logo,
-body.single-docs .header-logo {
+body.post-type-archive-docs .header__menu-link:hover,
+body.tax-doc_category .header__menu-link:hover,
+body.single-docs .header__menu-link:hover {
+    letter-spacing: -0.03em;
+    background: linear-gradient(270deg, #FBF9C6 39.48%, #E3D7FF 55.21%, #68FFE4 74.26%, #F1EBDD 99.36%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+body.post-type-archive-docs .header__menu,
+body.tax-doc_category .header__menu,
+body.single-docs .header__menu {
+    flex: 0 1 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+/* Menü hamburger ikon stilleri - Anasayfa ile tamamen aynı */
+body.post-type-archive-docs .menu-burger__header span,
+body.tax-doc_category .menu-burger__header span,
+body.single-docs .menu-burger__header span {
+    width: 24px;
+    height: 2px;
+    border-radius: 0.93px;
+    background: #fff;
+    position: absolute;
+    margin: 0 auto;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+body.post-type-archive-docs .menu-burger__header-1,
+body.tax-doc_category .menu-burger__header-1,
+body.single-docs .menu-burger__header-1 {
+    top: 18px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+body.post-type-archive-docs .menu-burger__header-2,
+body.tax-doc_category .menu-burger__header-2,
+body.single-docs .menu-burger__header-2 {
+    bottom: 18px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+body.post-type-archive-docs .menu-burger__header._js--open-menu,
+body.tax-doc_category .menu-burger__header._js--open-menu,
+body.single-docs .menu-burger__header._js--open-menu {
+    background: #E3D7FF;
+}
+
+body.post-type-archive-docs .menu-burger__header._js--open-menu .menu-burger__header-1,
+body.tax-doc_category .menu-burger__header._js--open-menu .menu-burger__header-1,
+body.single-docs .menu-burger__header._js--open-menu .menu-burger__header-1 {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    -ms-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #091D26;
+    top: 50%;
+}
+
+body.post-type-archive-docs .menu-burger__header._js--open-menu .menu-burger__header-2,
+body.tax-doc_category .menu-burger__header._js--open-menu .menu-burger__header-2,
+body.single-docs .menu-burger__header._js--open-menu .menu-burger__header-2 {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background: #091D26;
+    bottom: auto;
+    top: 50%;
+}
+
+/* App butonları stil */
+body.post-type-archive-docs .app__content-btn,
+body.tax-doc_category .app__content-btn,
+body.single-docs .app__content-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 44px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+body.post-type-archive-docs .app__content-btn:hover,
+body.tax-doc_category .app__content-btn:hover,
+body.single-docs .app__content-btn:hover {
+    background: #091D26;
+}
+
+body.post-type-archive-docs .app__content-btn--text,
+body.tax-doc_category .app__content-btn--text,
+body.single-docs .app__content-btn--text {
+    font-family: 'TT Commons Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #091D26;
+    margin-right: 10px;
+}
+
+body.post-type-archive-docs .app__content-btn:hover .app__content-btn--text,
+body.tax-doc_category .app__content-btn:hover .app__content-btn--text,
+body.single-docs .app__content-btn:hover .app__content-btn--text {
+    color: #FFFFFF;
+}
+
+body.post-type-archive-docs .app__content-btn--icon,
+body.tax-doc_category .app__content-btn--icon,
+body.single-docs .app__content-btn--icon {
+    flex: 0 0 35px;
+    width: 35px !important;
+    display: block;
+}
+
+body.post-type-archive-docs .app__content-btn:hover .app__content-btn--icon,
+body.tax-doc_category .app__content-btn:hover .app__content-btn--icon,
+body.single-docs .app__content-btn:hover .app__content-btn--icon {
     filter: invert(1);
 }
 
-/* BetterDocs wrapper'a üst margin ekle */
-.betterdocs-wrapper.betterdocs-docs-archive-wrapper {
-    margin-top: 100px;
+body.post-type-archive-docs .app__content-btn-block,
+body.tax-doc_category .app__content-btn-block,
+body.single-docs .app__content-btn-block {
+    display: flex;
+    align-items: center;
+}
+
+/* BetterDocs wrapper padding'lerini düzenle */
+.betterdocs-wrapper {
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+/* Admin bar için ek padding */
+.admin-bar .betterdocs-wrapper {
+    padding-top: 132px;
 }
 
 /* BetterDocs arka plan rengini değiştir */

@@ -26,11 +26,9 @@
 // });
 
 jQuery(document).ready(function() {
-  jQuery('body').toggleClass('noscroll');
-  setTimeout(() => {
-    jQuery(".animation__wrapper").addClass("close");
-    jQuery('body').removeClass('noscroll');
- },4000);
+  // Animasyonu hemen kapat
+  jQuery(".animation__wrapper").addClass("close");
+  jQuery('body').removeClass('noscroll');
 });
 // добавление класса для анимаци при скроле // ._anim-items///
 
