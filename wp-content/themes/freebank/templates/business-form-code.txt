@@ -1,0 +1,30 @@
+<div class="form-inner">
+    <div>
+        [text* company-name placeholder "Company name"]
+    </div>
+    <div>
+        [text* contact-name placeholder "Contact name"]
+    </div>
+    <div>
+        [email* contact-email placeholder "Contact email"]
+    </div>
+    <div class="phone-input-container full-width">
+        [select country-code class:country-code-select "+971 (AE)" "+966 (SA)" "+974 (QA)" "+965 (KW)" "+973 (BH)" "+968 (OM)" "+1 (US/CA)" "+44 (UK)" "+49 (DE)" "+33 (FR)" "+91 (IN)" "+90 (TR)" "+86 (CN)" "+81 (JP)" "+82 (KR)"]
+        [tel* contact-number placeholder "Contact number"]
+    </div>
+    <div>
+        [select* country class:form-control include_blank "United Arab Emirates" "Saudi Arabia" "Qatar" "Kuwait" "Bahrain" "Oman" "United States" "United Kingdom" "Germany" "France" "Italy" "Spain" "Canada" "Australia" "Japan" "China" "India" "Singapore" "Malaysia" "Turkey" "Egypt" "South Africa"]
+    </div>
+    <div>
+        [text* business-type placeholder "Type of business"]
+    </div>
+    <div class="full-width">
+        [url company-website placeholder "Company website"]
+    </div>
+    <div class="full-width">
+        [textarea suggestions placeholder "Please enter your question or suggestion"]
+    </div>
+    <div class="full-width">
+        [submit "Submit" class:business-submit-btn]
+    </div>
+</div>

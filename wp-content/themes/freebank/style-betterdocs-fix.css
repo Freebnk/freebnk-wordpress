@@ -1,0 +1,118 @@
+/* BetterDocs sayfalarında header'ı görünür yap */
+body.post-type-archive-docs .header,
+body.tax-doc_category .header,
+body.single-docs .header {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background-color: transparent;
+    position: relative;
+    z-index: 999;
+}
+
+/* BetterDocs sayfalarında header stillerini düzenle */
+body.post-type-archive-docs .header ._inner,
+body.tax-doc_category .header ._inner,
+body.single-docs .header ._inner {
+    background-color: #091D26;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+/* Header linklerini görünür yap */
+body.post-type-archive-docs .header__menu-link,
+body.tax-doc_category .header__menu-link,
+body.single-docs .header__menu-link {
+    color: #FFFFFF !important;
+    font-family: "TT Commons Pro", sans-serif;
+}
+
+/* Header logosunu görünür yap */
+body.post-type-archive-docs .header-logo,
+body.tax-doc_category .header-logo,
+body.single-docs .header-logo {
+    filter: invert(1);
+}
+
+/* BetterDocs wrapper'a üst margin ekle */
+.betterdocs-wrapper.betterdocs-docs-archive-wrapper {
+    margin-top: 100px;
+}
+
+/* BetterDocs arka plan rengini değiştir */
+.betterdocs-wrapper {
+    background-color: #F1EBDD !important;
+}
+
+/* BetterDocs ana içerik renkleri */
+.betterdocs-category-box-inner {
+    background-color: #FFFFFF !important;
+    border-color: #E3D7FF !important;
+}
+
+.betterdocs-category-box-inner:hover {
+    box-shadow: 0 5px 15px rgba(9, 29, 38, 0.15) !important;
+}
+
+/* BetterDocs link renkleri ve hover işlemleri */
+.betterdocs-category-box .docs-cat-title, 
+.betterdocs-category-box a {
+    color: #091D26 !important;
+    font-family: "TT Commons Pro", sans-serif;
+}
+
+.betterdocs-category-box a:hover {
+    color: #68FFE4 !important;
+}
+
+/* BetterDocs buton stili */
+.betterdocs-searchform-submit,
+.docs-single-cat-wrap .docs-item-container .docs-cat-link-btn {
+    background-color: #68FFE4 !important;
+    color: #091D26 !important;
+    font-family: "TT Commons Pro", sans-serif;
+    border: none !important;
+}
+
+.betterdocs-searchform-submit:hover,
+.docs-single-cat-wrap .docs-item-container .docs-cat-link-btn:hover {
+    background-color: #E3D7FF !important;
+}
+
+/* BetterDocs arama kutusu */
+.betterdocs-searchform {
+    border-color: #E3D7FF !important;
+    background-color: #FFFFFF !important;
+}
+
+/* BetterDocs kategori sayısı */
+.betterdocs-categories-count {
+    background-color: #FBF9C6 !important;
+    color: #091D26 !important;
+}
+
+/* BetterDocs sayfalama butonları */
+.betterdocs-categories-wrap .docs-cat-title-inner .docs-cat-title {
+    color: #091D26 !important;
+    font-family: "TT Commons Pro", sans-serif;
+}
+
+/* BetterDocs makale içeriği */
+.betterdocs-content-area {
+    background-color: #FFFFFF !important;
+}
+
+.betterdocs-content-area .docs-single-title h1 {
+    color: #091D26 !important;
+    font-family: "TT Commons Pro", sans-serif;
+}
+
+.betterdocs-content-area .betterdocs-content {
+    color: #152831 !important;
+    font-family: "TT Commons Pro", sans-serif;
+}
+
+/* Genel yazı tipi ayarları */
+.betterdocs-wrapper * {
+    font-family: "TT Commons Pro", sans-serif;
+}

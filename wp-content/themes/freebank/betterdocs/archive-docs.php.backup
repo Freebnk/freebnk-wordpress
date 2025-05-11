@@ -1,0 +1,15 @@
+<?php
+/**
+ * BetterDocs Archive Template with Theme Header
+ */
+
+get_header(); ?>
+
+<div class="betterdocs-wrapper">
+    <?php
+    // BetterDocs default content
+    echo do_shortcode('[betterdocs_category_grid]');
+    ?>
+</div>
+
+<?php get_footer(); ?>

@@ -1,0 +1,360 @@
+<?php
+
+/**
+
+ * Template name: Home
+
+ */
+   $current = get_the_ID();
+
+   get_header();
+
+?>
+
+
+<main class="home-page">
+      <section id="baner" class="baner">
+         <div class="_conteiner">
+            <div class="baner__fon">
+               <img src="<?php echo get_field('intro_image_desktop',$current)?>" alt="" class="_desctop">
+               <!-- <video autoplay muted loop playsinline class="_desctop">
+                  <source src="" type="video/mp4">
+              </video> -->
+               <img src="<?php echo get_field('intro_image_mob',$current)?>" alt="" class="_mobile">
+               <!-- <video autoplay muted loop playsinline class="_mobile">
+                  <source src="" type="video/mp4">
+              </video> -->
+            </div>
+            <div class="_inner">
+               <div class="baner__content">
+                  <div class="baner__title _title _anim-items _anim-no-hide _js-tl"><?php echo get_field('intro_title',$current)?></div>
+                  <div class="baner__text _anim-items _anim-no-hide _js-tl-3"><?php echo get_field('intro_text',$current)?></div>
+                  <a href="<?php echo get_field('intro_link',$current)?>" class="baner__btn  _anim-items _anim-no-hide _js-img">
+                     <div class="baner__btn-text"><?php echo get_field('intro_link_text',$current)?></div>
+                     <div class="baner__btn-icon">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/arr-icon.svg" alt="">
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="" class="partners">
+         <div class="_conteiner">
+            <?php if ( have_rows( 'partners_list',$current) ) { ?>
+               <ul class="partners__list">
+                  <?php while ( have_rows( 'partners_list',$current) ) { the_row(); ?>
+                     <li class="partners__item">
+                        <img src="<?php echo get_sub_field('icon')?>" alt="">
+                     </li>
+                  <?php } ?>
+               </ul>
+            <?php } ?>
+         </div>
+      </section>
+      <section id="products" class="card-points-plans _js-wrapper">
+         <div class="_conteiner">
+            <div class="_inner">
+            <?php if ( have_rows( 'products_items',$current) ) { $index = 0; ?>
+               <ul class="card-points-plans__content  _anim-items _anim-no-hide _js-img">
+                  <?php while ( have_rows( 'products_items',$current) ) { the_row(); $index++; ?>
+                     <li class="card-points-plans__content-block _js-content <?php echo $index++; ?>">
+                        <div class="card-points-plans__content-media">
+                           <img src="<?php echo get_sub_field('image')?>" alt="">
+                        </div>
+                        <div class="card-points-plans__content-info">
+                           <div class="card-points-plans__content-title"><?php echo get_sub_field('title')?></div>
+                           <div class="card-points-plans__content-text"><?php echo get_sub_field('text')?></div>
+                           <a href="<?php echo get_sub_field('link')?>" class="card-points-plans__content-btn _btn"><?php echo get_sub_field('link_text')?></a>
+                        </div>
+                     </li>
+                  <?php } ?>
+               </ul>
+            <?php } ?>
+            <?php if ( have_rows( 'products_items',$current) ) { $index1 = 0; ?>
+               <ul class="card-points-plans__filter _js-block-btn  _anim-items _anim-no-hide _js-tl">
+                  <?php while ( have_rows( 'products_items',$current) ) { the_row(); $index1++; ?>
+                     <li id="<?php echo $index1++; ?>" class="card-points-plans__filter-btn _js-btn"><?php echo get_sub_field('name')?></li>
+                  <?php } ?>
+               </ul>
+            <?php } ?>
+            </div>
+         </div>
+      </section>
+
+      <section id="" class="freeTo">
+         <div class="_conteiner">
+            <?php if ( have_rows( 'adv_items',$current) ) { $number = 0; ?>
+               <ul class="freeTo__list">
+                  <?php while ( have_rows( 'adv_items',$current) ) { the_row(); $number++; ?>
+                     <li class="freeTo__item <?php if ($number % 2 == 0) echo "free-to-funds"; ?>">
+                        <div class="freeTo__item-media">
+                           <img src="<?php echo get_sub_field('image_desktop')?>" alt="" class="_desctop">
+                           <img src="<?php echo get_sub_field('image_mob')?>" alt="" class="_mobile">
+                           <!-- <video autoplay muted loop playsinline  class="_desctop">
+                                    <source src="" type="video/mp4">
+                              </video> -->
+                           <!-- <video autoplay muted loop playsinline class="_mobile" >
+                                    <source src="" type="video/mp4">
+                              </video> -->
+                        </div>
+                        <div class="_inner">
+                           <div class="freeTo__item-content">
+                              <div class="freeTo__item-content--title _title  _anim-items _anim-no-hide _js-tl"><?php echo get_sub_field('title')?></div>
+                              <div class="freeTo__item-content--text  _anim-items _anim-no-hide _js-tl-3"><?php echo get_sub_field('text')?></div>
+                              <a href="<?php echo get_sub_field('link')?>" class="freeTo__item-content--btn _btn  _anim-items _anim-no-hide _js-img"><?php echo get_sub_field('link_text')?></a>
+                           </div>
+                        </div>
+                     </li>
+                  <?php } ?>
+               </ul>
+            <?php } ?>
+         </div>
+      </section>
+
+      <section id="" class="security-app">
+         <div class="_conteiner">
+            <img src="<?php echo get_field('security_image_bg',$current)?>" alt="" class="security-app__fon">
+            <div class="_inner">
+               <div class="security">
+                  <div class="security__content">
+                     <div class="security__content-title _title  _anim-items _anim-no-hide _js-tl"><?php echo get_field('security_title')?>
+                           <img src="<?php echo get_field('security_icon',$current)?>" alt="" class="security__content-title--icon">
+                        </span>
+                     </div>
+                     <div class="security__content-text  _anim-items _anim-no-hide _js-tl-3"><?php echo get_field('security_text',$current)?></div>
+                     <a href="<?php echo get_field('security_link',$current)?>" data-da=".security,800,last" class="security__content-btn _btn"><?php echo get_field('security_link_text',$current)?></a>
+                  </div>
+                  <div class="security__media  _anim-items _anim-no-hide _js-img">
+                     <img src="<?php echo get_field('security_first_image',$current)?>" alt="">
+                  </div>
+               </div>
+               <div class="app">
+                  <div class="app__media">
+                     <img src="<?php echo get_field('security_second_image',$current)?>" alt="">
+                      <!-- <video autoplay muted loop playsinline >
+                              <source src="" type="video/mp4">
+                          </video> -->
+                  </div>
+                  <div class="app__content">
+                     <div class="app__content-title  _anim-items _anim-no-hide _js-tl"><?php echo get_field('application_title',$current)?></div>
+                     <div class="app__content-text  _anim-items _anim-no-hide _js-tl-3"><?php echo get_field('application_text',$current)?></div>
+                     <div class="app__content-btn-block  _anim-items _anim-no-hide _js-img">
+                        <a href="<?php echo get_field('application_apple_link',$current)?>" class="app__content-btn">
+                           <div class="app__content-btn--text"><?php echo get_field('application_apple_link_text',$current)?></div>
+                           <img src="<?php echo get_field('application_apple_image',$current)?>" alt="" class="app__content-btn--icon">
+                        </a>
+                        <a href="<?php echo get_field('application_android_link',$current)?>" class="app__content-btn">
+                           <div class="app__content-btn--text"><?php echo get_field('application_android_link_text',$current)?></div>
+                           <img src="<?php echo get_field('application_android_image',$current)?>" alt="" class="app__content-btn--icon">
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>         
+         </div>
+      </section>
+      <section id="community" class="community">
+         <div class="_conteiner">
+            <div class="_inner">
+               <div class="community__slider-wrapper">
+                  <img src="<?php echo get_field('community_bg_image',$current)?>" alt="" class="community__fon  _anim-items _anim-no-hide _js-img">
+                  <?php if ( have_rows( 'community_items',$current) ) { ?>
+                     <ul class="community__slider  _anim-items _anim-no-hide _js-tl">
+                        <?php while ( have_rows( 'community_items',$current) ) { the_row(); ?>
+                           <li class="community__item">
+                              <div class="community__item-content">
+                                 <div class="community__item-title"><?php echo get_sub_field('title')?></div>
+                                 <div class="community__item-text"><?php echo get_sub_field('text')?></div>
+                                 <a href="<?php echo get_sub_field('link')?>" class="community__item-btn _btn"><?php echo get_sub_field('link_text')?></a>
+                              </div>
+                              <img src="<?php echo get_sub_field('image')?>" alt="" class="community__item-media">
+                           </li>
+                        <?php } ?>
+                     </ul>
+                  <?php } ?>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="" class="freedom">
+         <div class="_conteiner">
+            <div class="freedom__media">
+               <img src="<?php echo get_field('freedom_image_desktop',$current)?>" alt="" class="_desctop">
+               <img src="<?php echo get_field('freedom_image_mob',$current)?>" alt="" class="_mobile">
+            </div>
+            <div class="freedom__content">
+               <div class="freedom__title  _anim-items _anim-no-hide _js-tl"><?php echo get_field('freedom_title',$current)?></div>
+               <div class="freedom__text  _anim-items _anim-no-hide _js-tl-3"><?php echo get_field('freedom_text',$current)?></div>
+               <a href="<?php echo get_field('freedom_link',$current)?>" class="freedom__btn _btn  _anim-items _anim-no-hide _js-img"><?php echo get_field('freedom_link_text',$current)?></a>
+            </div>
+         </div>
+      </section>
+      <section class="joinUs-roadmap">
+         <div class="_conteiner">
+            <img src="<?php echo get_field('join_bg_image',$current)?>" alt="" class="joinUs-roadmap__fon">
+            <div class="_inner">
+               <div class="joinUs">
+                  <div class="joinUs__title  _anim-items _anim-no-hide _js-tl">Join using Freebnk</div>
+                  <div class="joinUs__content  _anim-items _anim-no-hide _js-img">
+                     <?php if ( have_rows( 'join_images',$current) ) { ?>
+                        <ul class="joinUs__content-img-list">
+                           <?php while ( have_rows( 'join_images',$current) ) { the_row(); ?>
+                              <li class="joinUs__content-img-item">
+                                 <img src="<?php echo get_sub_field('image')?>" alt="">
+                              </li>
+                           <?php } ?>
+                        </ul>
+                     <?php } ?>
+                     <div class="joinUs__content-info  _anim-items _anim-no-hide _js-tl-3">
+                        <div class="joinUs__content-amount"><?php echo get_field('join_users_number',$current)?></div>
+                        <div class="joinUs__content-name"><?php echo get_field('join_users_name',$current)?></div>
+                     </div>
+                  </div>
+                  <div class="joinUs__btn-block  _anim-items _anim-no-hide _js-img">
+                     <div class="joinUs__btn"><?php echo get_field('join_get_text',$current)?></div>
+                     <a href="<?php echo get_field('application_apple_link',$current)?>" class="joinUs__link">
+                        <img src="<?php echo get_field('application_apple_image',$current)?>" alt="" class="joinUs__link-icon">
+                     </a>
+                     <a href="<?php echo get_field('application_android_link',$current)?>" class="joinUs__link">
+                        <img src="<?php echo get_field('application_android_image',$current)?>" alt="" class="joinUs__link-icon">
+                     </a>
+                  </div>
+               </div>
+               <div id="roadmap"  class="roadmap">
+                  <div class="roadmap__title  _anim-items _anim-no-hide _js-tl"><?php echo get_field('succeed_title',$current)?></div>
+                  <div class="roadmap__text  _anim-items _anim-no-hide _js-tl-3"><?php echo get_field('succeed_text',$current)?></div>
+                  <div class="roadmap__content  _anim-items _anim-no-hide _js-img">
+                  <?php if ( have_rows( 'succeed_items',$current) ) { ?>
+                     <ul class="roadmap__list">
+                        <?php while ( have_rows( 'succeed_items',$current) ) { the_row(); ?>
+                           <li class="roadmap__item <?php if (get_sub_field('active')) echo "_active-item" ?>">
+                              <div class="roadmap__item-title"><?php echo get_sub_field('title')?></div>
+                              <div class="roadmap__item-text"><?php echo get_sub_field('text')?></div>
+                              <div class="roadmap__item-footer">
+                                 <div class="roadmap__item-icon">
+                                    <img src="<?php echo get_sub_field('image')?>" alt="">
+                                 </div>
+                                 <div class="roadmap__item-data"><?php echo get_sub_field('date')?></div>
+                              </div>
+                           </li>
+                           <?php } ?>
+                        </ul>
+                     <?php } ?>
+                     <?php if ( have_rows( 'succeed_items',$current) ) { ?>
+                        <ul class="roadmap__dots-list">
+                           <?php while ( have_rows( 'succeed_items',$current) ) { the_row(); ?>
+                              <li class="roadmap__dots-item  <?php if (get_sub_field('active')) echo "_active-item" ?>">
+                                 <div class="roadmap__dots-item--dots"></div>
+                              </li>
+                           <?php } ?>
+                        </ul>
+                     <?php } ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="team" class="team">
+         <div class="_conteiner">
+            <div class="_inner">
+               <div class="team__title  _anim-items _anim-no-hide _js-tl"><?php echo get_field('team_title',$current)?></div>
+               <div class="team__text  _anim-items _anim-no-hide _js-tl-3"><?php echo get_field('team_text',$current)?></div>
+               <?php if ( have_rows( 'members',$current) ) { ?>
+                  <ul class="team__list  _anim-items _anim-no-hide _js-img">
+                     <?php while ( have_rows( 'members',$current) ) { the_row(); ?>
+                        <li class="team__item">
+                           <div class="team__foto">
+                              <img src="<?php echo get_sub_field('image')?>" alt="">
+                           </div>
+                           <div class="team__name"><?php echo get_sub_field('name')?></div>
+                           <div class="team__position"><?php echo get_sub_field('position')?></div>
+                        </li>
+                     <?php } ?>
+                  </ul>
+               <?php } ?>
+            </div>
+         </div>
+      </section>
+      <section id="" class="animWords ">
+         <div class="_conteiner">
+            <div class="_inner">
+               <div class="animWords__header  _anim-items _anim-no-hide _js-img">
+                  <div class="animWords__title"><?php echo get_field('last_title',$current)?></div>
+                  <?php if ( have_rows( 'last_animation',$current) ) { ?>
+                     <ul class="animWords__title-slider">
+                        <?php while ( have_rows( 'last_animation',$current) ) { the_row(); ?>
+                           <li class="animWords__title-slider--item" style="width: max-content;"><?php echo get_sub_field('word')?></li>
+                        <?php } ?>
+                     </ul>
+                  <?php } ?>
+               </div>
+               <div class="animWords__text  _anim-items _anim-no-hide _js-tl"><?php echo get_field('last_text',$current)?></div>
+               <div class="app__content-btn-block  _anim-items _anim-no-hide _js-img">
+                  <a href="<?php echo get_field('application_apple_link',$current)?>" class="app__content-btn">
+                     <div class="app__content-btn--text"><?php echo get_field('application_apple_link_text',$current)?></div>
+                     <img src="<?php echo get_field('application_apple_image',$current)?>" alt="" class="app__content-btn--icon">
+                  </a>
+                  <a href="<?php echo get_field('application_android_link',$current)?>" class="app__content-btn">
+                     <div class="app__content-btn--text"><?php echo get_field('application_android_link_text',$current)?></div>
+                     <img src="<?php echo get_field('application_android_image',$current)?>" alt="" class="app__content-btn--icon">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="contact" class="contacts">
+         <div class="_conteiner">
+            <div class="_inner">
+               <div class="contacts__content">
+                  <div class="contacts__content-title  _anim-items _anim-no-hide _js-tl"><?php echo get_field('contacts_title',$current)?></div>
+                  <div class="contacts__content-address  _anim-items _anim-no-hide _js-tl-3"><?php echo get_field('contacts_address',$current)?></div>
+
+                  <a href="mailto:<?php echo get_field('contacts_email',$current)?>" data-da=".contacts ._inner,800,last"  class="contacts__content-mail  _anim-items _anim-no-hide _js-img"><?php echo get_field('contacts_email',$current)?></a>
+                  <div data-da=".contacts ._inner,800,last" class="contacts__content-soc">
+                     <?php if ( have_rows( 'social_networks',$current) ) { ?>
+                        <ul class="footer__content--soc-list  _anim-items _anim-no-hide _js-img">
+                           <?php while ( have_rows( 'social_networks',$current) ) { the_row(); ?>
+                              <li class="footer__content--soc-item">
+                                 <a href="<?php echo get_sub_field('link')?>" class="footer__content--soc-link">
+                                    <img src="<?php echo get_sub_field('icon')?>" alt="">
+                                 </a>
+                              </li>
+                           <?php } ?>
+                        </ul>
+                     <?php } ?>
+                  </div>
+               </div>
+               <div class="contacts__form-wrapper  _anim-items _anim-no-hide _js-img">
+                  <form action="#" class="contacts--form">
+                     <ul class="contacts--form-list">
+                        <li class="contacts--form-item _50">
+                           <input type="text" name="first-name" placeholder="First name " >
+                        </li>
+                        <li class="contacts--form-item _50">
+                           <input type="text" name="last-name" placeholder="Last name " >
+                        </li>
+                        <li class="contacts--form-item">
+                           <input type="email" name="email" placeholder="Email address" >
+                        </li>
+                        <li class="contacts--form-item">
+                           <textarea class="" placeholder="Massage" rows="3" cols="45" type="text" name="message" ></textarea>
+                        </li>
+                     </ul>
+                     <div class="contacts--form-item btn-submit">
+                        <input type="submit" value="send">
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+   </main>
+
+<?php
+
+    get_footer();
+

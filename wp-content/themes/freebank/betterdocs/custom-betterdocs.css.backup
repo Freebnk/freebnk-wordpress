@@ -1,0 +1,22 @@
+/* BetterDocs Header Fix */
+.betterdocs-wrapper {
+    margin-top: 20px;
+}
+
+.site-header {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.betterdocs-archive-wrap {
+    padding-top: 30px;
+}
+
+/* Header'ın BetterDocs sayfalarında görünmesini sağla */
+body.post-type-archive-docs .site-header,
+body.tax-doc_category .site-header,
+body.single-docs .site-header {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
